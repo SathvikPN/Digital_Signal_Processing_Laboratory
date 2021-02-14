@@ -10,10 +10,10 @@ h=input('Enter sequence h: ')
 % convolution
 m=length(x);
 n=length(h);
-X=[x,zeros(1,n)];
+X=[x,zeros(1,n)]; % zeros(1,n) ==> zero matrix (row=1, col=n)
 H=[h,zeros(1,m)];
-for i = 1:(n+m-1)
-    Y(i)=0;
+for i = 1:(n+m-1)   % Matlab index starts from 1
+    Y(i)=0;  % Y(ith element) = value  
     for j = 1:m
         if (i-j+1 > 0)
             Y(i) = Y(i) +  X(j) * H(i-j+1) ; 
