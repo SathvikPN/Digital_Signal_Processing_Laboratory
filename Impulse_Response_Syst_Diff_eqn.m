@@ -1,14 +1,16 @@
 % y(n) - (1/4)y(n-1) = x(n)
-% given N = 50
+
 clc
 clear all
 close all
 
-H1 = impz(1, [1,(-1/4)], 50);
+a = input("Enter co-eff numerator: ");
+b = input("Enter co-eff denominator: "); % 1
+n = input("No. samples: ");
+HI = impz(b,a,n);
 
-t = 0: 1: 49 ;
-subplot(1,2,1);
-stem(t, H1);
+t = 0: 1: (n-1) ;
 
+stem(t, HI);
 xlabel('time');
-ylabel('Impulse response of 1st order system');
+ylabel('Impulse response of system');
