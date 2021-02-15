@@ -1,19 +1,18 @@
+  
 % y(n) - (1/4)y(n-1) = x(n)
+
 clc
-close all
 clear all
+close all
 
-t = 0: 49;
-x = ones(1,50);
-y = filter(1, [1, -1/4], x);
-subplot(1,2,1);
-stem(t,y);
-xlabel('Time');
-ylabel('Step Response');
+a = input("Enter co-eff numerator: ");
+b = input("Enter co-eff denominator: "); % 1
+n = input("No. samples: ");
+x = ones(1,n);
+HS = filter(b,a,x);
 
-% y(n) - (3/4)y(n-1) - (1/8)y(n-2) = x(n)
-y2 = filter(1, [1,-3/4,-1/8], x);
-subplot(1,2,2);
-stem(t,y2);
-xlabel('Time');
-ylabel('Step Response');
+t = 0: 1: (n-1) ;
+
+stem(t, HS);
+xlabel('time');
+ylabel('Step response of system');
