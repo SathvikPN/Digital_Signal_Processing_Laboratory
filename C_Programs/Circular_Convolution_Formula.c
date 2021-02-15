@@ -30,7 +30,7 @@ int main()
     printf("\n\n");
 
 
-    // Zero Padding
+// Zero Padding --------------------------------------------------------------------------
     if (lx-lh != 0)
     {
         if (lx>lh)
@@ -47,7 +47,7 @@ int main()
 
     }
 
-    // CIRCULAR CONVOLUTION
+// CIRCULAR CONVOLUTION --------------------------------------------------------------------
     y[0] = 0;
     a[0] = h[0];
 
@@ -61,7 +61,7 @@ int main()
     {
         y[k] = 0;
 
-        //circular shift
+        //circular shift -------------------------------------------------------------------
         for (int j=1; j<lh; j++)
         {
             x2[j] = a[j-1];
@@ -76,7 +76,7 @@ int main()
     }
 
 
-    // DISPLAY
+// DISPLAY OUTPUT -------------------------------------------------------------------------
     printf("x(n) = ");
     for (int i=0; i<lx; i++)
     {
