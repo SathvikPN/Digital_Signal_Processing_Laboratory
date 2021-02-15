@@ -3,7 +3,7 @@
 int main()
 {
     int lx,lh;
-    printf("LINEAR CONVOLUTION\n");
+    printf("CONVOLUTION\n");
     printf("Enter sequence x Length: ");
     scanf("%d",&lx);
     printf("Enter sequence h Length: ");
@@ -25,6 +25,9 @@ int main()
         scanf("%d",&h[i]);
     }
 
+    printf("\n\n");
+
+
     // Zero Padding
     for (int i=lx; i<lx+lh-1; i++)
     {
@@ -35,8 +38,8 @@ int main()
         h[i] = 0;
     }
 
-
     // Linear Convolution
+    printf("LINEAR CONVOLUTION\n");
     for (int i=0; i<lx+lh-1; i++)
     {
         y[i] = 0;
@@ -46,23 +49,25 @@ int main()
         }
     }
 
-
     // OUTPUT
-    printf("Convolution of \n");
+    printf("x(n) = ");
     for (int i=0; i<lx+lh-1; i++)
     {
         printf("%d ",x[i]);
     }
     printf("\n");
 
+    printf("h(n) = ");
     for (int i=0; i<lx+lh-1; i++)
     {
         printf("%d ",h[i]);
     }
-    printf("\n");
+    printf("\n\n");
 
+    printf("Linear Convolution points \nY(n) = ");
     for (int i=0; i<lx+lh-1; i++)
     {
-        printf("Y[%d] = %d  \n",i,y[i]);  // OUTPUT 
+        printf("%d ",y[i]);
     }
+    printf("\n\n");
 }
